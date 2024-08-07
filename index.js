@@ -24,7 +24,7 @@ createBtn.addEventListener('click', () => {
     //adding a classname called input-box to the p element
     inputBox.className = "input-box";
 
-    //dding inputBox set attribute to contenteditable and true
+    //adding inputBox set attribute to contenteditable and true
     inputBox.setAttribute("contenteditable", "true");
     img.src = "images/delete.png";
 
@@ -32,7 +32,7 @@ createBtn.addEventListener('click', () => {
     notesContainer.appendChild(inputBox).appendChild(img);
 
     //adding a focus to the inputBox
-    imputBpx.focus();
+    inputBox.focus();
 
     //updating the storage after we add a new note
     updateStorage();
