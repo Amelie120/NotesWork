@@ -6,10 +6,11 @@
 }
 
 .container {
-    width: 100%;
+    margin: auto;
+    width: 97%;
     min-height: 150vh;
     max-width: 150vw;
-    background: pink;
+    background: #A5E3EF;
     padding-top: 4%;
     padding-left: 10%;
 }
@@ -33,7 +34,7 @@
 .container button {
     display: flex;
     align-items: center;
-    background: #f1356d;
+    background: #347683;
     color: white;
     font-size: 16px;
     border: none;
