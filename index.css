@@ -5,32 +5,46 @@
     box-sizing: border-box;
 }
 
-.container {
-    margin: auto;
-    width: 97%;
-    min-height: 150vh;
-    max-width: 150vw;
+/* centering the container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* making the height of the viewport - so full page*/
+    margin: 0;
     background: #A5E3EF;
-    padding-top: 4%;
-    padding-left: 10%;
 }
 
+.container {
+    width: 80%;
+    max-width: 1000px;
+    background: #A5E3EF;
+    padding: 2% 5%;
+    border-radius: 10px;
+}
+
+/* styling for the heading */
 .container h1 {
     display: flex;
     align-items: center;
     font-size: 35px;
     font-weight: 600;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: progress;
 }
 
-.container h1 img {
-    width: 60px;
+.container h1:hover {
+    transform: translateX(10px) rotate(3deg);
 }
 
-.container button img {
-    width: 25px;
-    margin-right: 8px;
+.container h1:hover::after {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
 }
 
+/*  styling the button with hover effect */
 .container button {
     display: flex;
     align-items: center;
@@ -42,8 +56,28 @@
     padding: 15px 25px;
     margin: 30px 0 20px;
     cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+.container button img {
+    width: 25px;
+    margin-right: 8px;
+}
+
+.container button:hover {
+    transform: scale(1.05);
+    /*  darkening the button to give user feedback*/
+    background-color: #2b616f;
+}
+
+.container h1 img {
+    width: 100px;
+    height: auto;
+
+}
+
+
+/* styiling the input box  */
 .input-box {
     position: relative;
     width: 100%;
@@ -56,6 +90,19 @@
     outline: none;
     border-radius: 5px;
     cursor: text;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: pre-wrap;
+    /* making sure  long words break and don't overflow */
+    overflow-wrap: break-word;
+    /* adding an invisible border to prevent shifting */
+    border: 1px solid transparent;
+
+}
+
+/* making sure the  cursor is visible and blinking so that we know when to start typing */
+.input-box:focus {
+    border: 1px solid #ccc;
+    caret-color: black;
 }
 
 .input-box img {
@@ -64,4 +111,11 @@
     bottom: 15px;
     right: 15px;
     cursor: pointer;
+}
+
+.input-box:hover {
+    /* increasing the size of the white text box */
+    transform: scale(1.02);
+    /* adding shadow to the box after they hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
